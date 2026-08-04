@@ -40,6 +40,10 @@ while True:
         #Mark a task
         elif option == 4:
             functions.mark(tasks)
+
+        #List a tasks
+        elif option == 5:
+            functions.list(tasks)
     except ValueError:
         print('Value error')
         sleep(1)

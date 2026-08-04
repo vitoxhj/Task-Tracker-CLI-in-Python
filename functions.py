@@ -93,5 +93,18 @@ def mark(tasks):
     print('ID not found!')
     sleep(1)
     return
+
+def list(tasks):
+    for task in tasks:
+        print(f'ID: {task['id']}\nTask: {task['name']}')
+        if task['completed'] == True:
+            print('Completed: ✅')
+        else:
+            print('Completed: ❌')
+        if task['In_progress'] == True:
+            print('in-progress: ✅')
+        else:
+            print('in-progress: ❌')
+        print('-'*30)
             
 

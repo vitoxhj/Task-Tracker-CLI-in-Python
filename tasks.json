@@ -14,7 +14,7 @@
     {
         "id": 4,
         "name": "Comer",
-        "completed": false,
+        "completed": true,
         "In_progress": false
     },
     {
