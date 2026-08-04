@@ -1,0 +1,8 @@
+1-Adicionar
+2-Atualizar
+3-Deletar
+4-Marca em concluida ou em andamento
+5-Lista as Tarefas
+6-Lista realizadas
+7-Lista não realizadas
+8-Lista em andamento
