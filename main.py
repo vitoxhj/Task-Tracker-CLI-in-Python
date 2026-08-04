@@ -33,6 +33,10 @@ while True:
         #update a task
         elif option == 2:
             functions.update(tasks)
+
+        #Delete a task
+        elif option == 3:
+            functions.delete(tasks)
     except ValueError:
-        sleep(1)
         print('Value error')
+        sleep(1)

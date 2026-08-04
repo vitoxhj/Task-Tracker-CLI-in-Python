@@ -6,20 +6,20 @@
         "In_progress": false
     },
     {
-        "id": 2,
-        "name": "Limpar a casa",
-        "completed": false,
-        "In_progress": false
-    },
-    {
         "id": 3,
-        "name": "Estudar",
+        "name": "nada",
         "completed": false,
         "In_progress": false
     },
     {
         "id": 4,
-        "name": "Escovar os dentes",
+        "name": "Comer",
+        "completed": false,
+        "In_progress": false
+    },
+    {
+        "id": 2,
+        "name": "Comer dadinho",
         "completed": false,
         "In_progress": false
     }
