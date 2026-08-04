@@ -51,7 +51,7 @@
         "id": 9,
         "name": "Ir para academia",
         "completed": false,
-        "In_progress": false
+        "In_progress": true
     },
     {
         "id": 10,
@@ -75,7 +75,7 @@
         "id": 13,
         "name": "Ler um livro",
         "completed": false,
-        "In_progress": false
+        "In_progress": true
     },
     {
         "id": 14,

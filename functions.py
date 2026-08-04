@@ -8,6 +8,9 @@ def create_json(arquive,dados):
             json.dump(dados, f, indent=4, ensure_ascii=False)
     else:
         return
+def save_tasks(tasks):
+    with open('tasks.json', 'w', encoding='utf-8') as f:
+        json.dump(tasks, f, indent=4, ensure_ascii=False)
 
 def create(tasks):
     name = str(input('Task:'))
@@ -22,9 +25,7 @@ def create(tasks):
         'In_progress':False
     }
     tasks.append(info)
-
-    with open('tasks.json', 'w', encoding='utf-8') as f:
-        json.dump(tasks, f, indent=4, ensure_ascii=False)
+    save_tasks(tasks)
     print('Task added successfully!')
     sleep(1)
 
@@ -35,8 +36,7 @@ def update(tasks):
             print(f'old: {task['name']}')
             new = str(input('New:'))
             task['name'] = new
-            with open('tasks.json', 'w', encoding='utf-8') as f:
-                json.dump(tasks, f, indent=4, ensure_ascii=False)
+            save_tasks(tasks)
             print('Task updated successfully!')
             sleep(1)
             return
@@ -54,9 +54,8 @@ def delete(tasks):
                 return
             elif confirm == 'yes':
                 tasks.remove(task)
-                with open('tasks.json', 'w', encoding='utf-8') as f:
-                    json.dump(tasks, f, indent=4, ensure_ascii=False)
-                    print('Task deleted successfully!')
+                save_tasks(tasks)
+                print('Task deleted successfully!')
                 sleep(1)
                 return
             else:
@@ -72,7 +71,7 @@ def mark(tasks):
     for task in tasks:
         if task['id'] == task_id:
             print(f'Task: {task['name']}')
-            print('1-Mark completed\n2-Mark in-progress\n3-No completed')
+            print('1-Mark completed\n2-Mark in-progress\n3-Mark as not started')
             print('='*30)
             option = int(input('->'))
             if option < 1 or option > 3:
@@ -90,80 +89,67 @@ def mark(tasks):
                 task['In_progress'] = False
                 task['completed'] = False
 
-            with open('tasks.json', 'w', encoding='utf-8') as f:
-                json.dump(tasks, f, indent=4, ensure_ascii=False)
-                print('Task marked successfully!')
+            save_tasks(tasks)
+            print('Task marked successfully!')
             sleep(1)
             return
     print('ID not found!')
     sleep(1)
     return
 
+def show_task(task):
+    print(f'ID: {task['id']}\nTask: {task['name']}')
+    if task['completed']:
+        print('Completed: ✅')
+    else:
+        print('Completed: ❌')
+    if task['In_progress']:
+        print('in-progress: ✅')
+    else:
+        print('in-progress: ❌')
+    print('-'*30)
+
 def list_tasks(tasks):
     if not tasks:
         print('Not tasks in manager!')
         return
     for task in tasks:
-        print(f'ID: {task['id']}\nTask: {task['name']}')
-        if task['completed'] == True:
-            print('Completed: ✅')
-        else:
-            print('Completed: ❌')
-        if task['In_progress'] == True:
-            print('in-progress: ✅')
-        else:
-            print('in-progress: ❌')
-        print('-'*30)
+        show_task(task)
 
 def list_tasks_completeds(tasks):
     if not tasks:
         print('Not tasks in manager!')
         return
+    found = False
     for task in tasks:
-        if task['completed'] == True:
-            print(f'ID: {task['id']}\nTask: {task['name']}')
-            if task['completed'] == True:
-                print('Completed: ✅')
-            else:
-                print('Completed: ❌')
-            if task['In_progress'] == True:
-                print('in-progress: ✅')
-            else:
-                print('in-progress: ❌')
-            print('-'*30)
+        if task['completed']:
+            found = True
+            show_task(task)
+    if not found:
+        print('No completed tasks')
 
 def list_tasks_not_completeds(tasks):
     if not tasks:
         print('Not tasks in manager!')
         return
+    found = False
     for task in tasks:
-        if task['completed'] == False and task['In_progress'] ==False:
-            print(f'ID: {task['id']}\nTask: {task['name']}')
-            if task['completed'] == True:
-                print('Completed: ✅')
-            else:
-                print('Completed: ❌')
-            if task['In_progress'] == True:
-                print('in-progress: ✅')
-            else:
-                print('in-progress: ❌')
-            print('-'*30)
+        if not task['completed']  and not task['In_progress']:
+            found = True
+            show_task(task)
+    if not found:
+        print('No not completed tasks')
 
 def list_tasks_in_progress(tasks):
     if not tasks:
         print('Not tasks in manager!')
         return
+    found = False
     for task in tasks:
-        if task['In_progress'] == True:
-            print(f'ID: {task['id']}\nTask: {task['name']}')
-            if task['completed'] == True:
-                print('Completed: ✅')
-            else:
-                print('Completed: ❌')
-            if task['In_progress'] == True:
-                print('in-progress: ✅')
-            else:
-                print('in-progress: ❌')
-            print('-'*30)
+        if task['In_progress']:
+            found = True
+            show_task(task)
+    if not found:
+        print('No in-progress tasks')
                 
 
