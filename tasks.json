@@ -1,26 +1,86 @@
 [
     {
         "id": 1,
-        "name": "Comprar verdura",
-        "completed": false,
-        "In_progress": true
-    },
-    {
-        "id": 3,
-        "name": "nada",
-        "completed": false,
-        "In_progress": false
-    },
-    {
-        "id": 4,
-        "name": "Comer",
+        "name": "Acordar",
         "completed": true,
         "In_progress": false
     },
     {
         "id": 2,
-        "name": "Comer dadinho",
+        "name": "Escovar os dentes",
+        "completed": false,
+        "In_progress": true
+    },
+    {
+        "id": 3,
+        "name": "Tomar café",
+        "completed": true,
+        "In_progress": false
+    },
+    {
+        "id": 4,
+        "name": "Estudar",
+        "completed": true,
+        "In_progress": false
+    },
+    {
+        "id": 5,
+        "name": "Descansar",
+        "completed": true,
+        "In_progress": false
+    },
+    {
+        "id": 6,
+        "name": "Comer o almoço",
+        "completed": true,
+        "In_progress": false
+    },
+    {
+        "id": 7,
+        "name": "Assistir",
+        "completed": true,
+        "In_progress": false
+    },
+    {
+        "id": 8,
+        "name": "estudar",
+        "completed": false,
+        "In_progress": true
+    },
+    {
+        "id": 9,
+        "name": "Ir para academia",
         "completed": false,
         "In_progress": false
+    },
+    {
+        "id": 10,
+        "name": "Tomar banho",
+        "completed": false,
+        "In_progress": true
+    },
+    {
+        "id": 11,
+        "name": "Dencansar",
+        "completed": false,
+        "In_progress": true
+    },
+    {
+        "id": 12,
+        "name": "Jantar",
+        "completed": false,
+        "In_progress": true
+    },
+    {
+        "id": 13,
+        "name": "Ler um livro",
+        "completed": false,
+        "In_progress": false
+    },
+    {
+        "id": 14,
+        "name": "Dormir",
+        "completed": false,
+        "In_progress": true
     }
 ]

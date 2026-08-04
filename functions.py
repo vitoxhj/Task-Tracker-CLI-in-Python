@@ -48,6 +48,7 @@ def delete(tasks):
     id = int(input('ID:'))
     for task in tasks:
         if task['id'] == id:
+            print(f'task: {task['name']}')
             confirm = input(('Really delete this task?[yes/no]:')).strip().lower()
             if confirm == 'no':
                 return
@@ -70,10 +71,11 @@ def mark(tasks):
     task_id = int(input('ID:'))
     for task in tasks:
         if task['id'] == task_id:
-            print('1-Mark completed\n2-Mark in-progress')
+            print(f'Task: {task['name']}')
+            print('1-Mark completed\n2-Mark in-progress\n3-No completed')
             print('='*30)
             option = int(input('->'))
-            if option < 1 or option > 2:
+            if option < 1 or option > 3:
                 print('Option unavailable')
                 sleep(1)
                 return
@@ -83,6 +85,9 @@ def mark(tasks):
 
             elif option == 2:
                 task['In_progress'] = True
+                task['completed'] = False
+            elif option == 3:
+                task['In_progress'] = False
                 task['completed'] = False
 
             with open('tasks.json', 'w', encoding='utf-8') as f:
@@ -94,7 +99,10 @@ def mark(tasks):
     sleep(1)
     return
 
-def list(tasks):
+def list_tasks(tasks):
+    if not tasks:
+        print('Not tasks in manager!')
+        return
     for task in tasks:
         print(f'ID: {task['id']}\nTask: {task['name']}')
         if task['completed'] == True:
@@ -106,5 +114,56 @@ def list(tasks):
         else:
             print('in-progress: ❌')
         print('-'*30)
-            
+
+def list_tasks_completeds(tasks):
+    if not tasks:
+        print('Not tasks in manager!')
+        return
+    for task in tasks:
+        if task['completed'] == True:
+            print(f'ID: {task['id']}\nTask: {task['name']}')
+            if task['completed'] == True:
+                print('Completed: ✅')
+            else:
+                print('Completed: ❌')
+            if task['In_progress'] == True:
+                print('in-progress: ✅')
+            else:
+                print('in-progress: ❌')
+            print('-'*30)
+
+def list_tasks_not_completeds(tasks):
+    if not tasks:
+        print('Not tasks in manager!')
+        return
+    for task in tasks:
+        if task['completed'] == False and task['In_progress'] ==False:
+            print(f'ID: {task['id']}\nTask: {task['name']}')
+            if task['completed'] == True:
+                print('Completed: ✅')
+            else:
+                print('Completed: ❌')
+            if task['In_progress'] == True:
+                print('in-progress: ✅')
+            else:
+                print('in-progress: ❌')
+            print('-'*30)
+
+def list_tasks_in_progress(tasks):
+    if not tasks:
+        print('Not tasks in manager!')
+        return
+    for task in tasks:
+        if task['In_progress'] == True:
+            print(f'ID: {task['id']}\nTask: {task['name']}')
+            if task['completed'] == True:
+                print('Completed: ✅')
+            else:
+                print('Completed: ❌')
+            if task['In_progress'] == True:
+                print('in-progress: ✅')
+            else:
+                print('in-progress: ❌')
+            print('-'*30)
+                
 
