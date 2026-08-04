@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Comprar verdura",
+        "completed": false,
+        "In_progress": false
+    },
+    {
+        "id": 2,
+        "name": "Limpar a casa",
+        "completed": false,
+        "In_progress": false
+    },
+    {
+        "id": 3,
+        "name": "Estudar",
+        "completed": false,
+        "In_progress": false
+    },
+    {
+        "id": 4,
+        "name": "Escovar os dentes",
+        "completed": false,
+        "In_progress": false
+    }
+]
