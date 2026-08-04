@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Comprar verdura",
         "completed": false,
-        "In_progress": false
+        "In_progress": true
     },
     {
         "id": 3,

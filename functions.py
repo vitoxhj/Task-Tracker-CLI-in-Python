@@ -14,7 +14,7 @@ def create(tasks):
     new_id = 1
     while any(task['id'] == new_id for task in tasks):
         new_id += 1
-        
+
     info = {
         'id': new_id,
         'name': name,
@@ -64,3 +64,34 @@ def delete(tasks):
                 return
     print('ID not found!')
     sleep(1)
+    return
+
+def mark(tasks):
+    task_id = int(input('ID:'))
+    for task in tasks:
+        if task['id'] == task_id:
+            print('1-Mark completed\n2-Mark in-progress')
+            print('='*30)
+            option = int(input('->'))
+            if option < 1 or option > 2:
+                print('Option unavailable')
+                sleep(1)
+                return
+            elif option == 1:
+                task['completed'] = True
+                task['In_progress'] = False
+
+            elif option == 2:
+                task['In_progress'] = True
+                task['completed'] = False
+
+            with open('tasks.json', 'w', encoding='utf-8') as f:
+                json.dump(tasks, f, indent=4, ensure_ascii=False)
+                print('Task marked successfully!')
+            sleep(1)
+            return
+    print('ID not found!')
+    sleep(1)
+    return
+            
+

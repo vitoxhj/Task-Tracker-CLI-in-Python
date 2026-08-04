@@ -14,7 +14,6 @@ with open('tasks.json', 'r', encoding='utf-8') as f:
 while True:
     #Interface
     try:
-        os.system('cls')
         sleep(0.5)
         print('='*30)
         print('TASK MANAGER'.center(30))
@@ -37,6 +36,10 @@ while True:
         #Delete a task
         elif option == 3:
             functions.delete(tasks)
+
+        #Mark a task
+        elif option == 4:
+            functions.mark(tasks)
     except ValueError:
         print('Value error')
         sleep(1)
