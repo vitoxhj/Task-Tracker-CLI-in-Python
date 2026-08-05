@@ -149,6 +149,9 @@ Algumas funcionalidades que podem ser adicionadas futuramente:
 * [ ] Melhorar a interface
 * [ ] Adicionar testes automatizados
 
+## Site URL
+https://github.com/vitoxhj/Task-Tracker-CLI-in-Python
+
 ## 📄 Licença
 
 Este projeto foi desenvolvido para fins educacionais.
