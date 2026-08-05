@@ -100,13 +100,13 @@ def mark(tasks):
 def show_task(task):
     print(f'ID: {task['id']}\nTask: {task['name']}')
     if task['completed']:
-        print('Completed: ✅')
+        print('Completed: YES')
     else:
-        print('Completed: ❌')
+        print('Completed: NO')
     if task['In_progress']:
-        print('in-progress: ✅')
+        print('in-progress: YES')
     else:
-        print('in-progress: ❌')
+        print('in-progress: NO')
     print('-'*30)
 
 def list_tasks(tasks):
